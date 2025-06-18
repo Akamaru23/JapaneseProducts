@@ -18,31 +18,26 @@
                 <h1 class="point" onclick="location.href='{{ route('adminDatabase') }}'">查詢資料</h1>
             </div>
 
-            <div class="space50px"></div>
 
             <div id="selector">
                 <h1 class="point" onclick="location.href='{{ route('showImg') }}'">新增資料</h1>
             </div>
 
-            <div class="space50px"></div>
             
             <div id="selector">
                 <h1 class="point" onclick="location.href='{{ route('showComments') }}'">確認訊息</h1>
             </div>
 
-            <div class="space50px"></div>
             
             <div id="selector">
                 <h1 class="point" onclick="location.href='{{ route('top3rank') }}'">更新Top3</h1>
             </div>
 
-            <div class="space50px"></div>
             
             <div id="selector">
                 <h1 class="point" onclick="location.href='{{ route('rank') }}'">更新各縣Top3</h1>
             </div>
 
-            <div class="space100px"></div>
     </div>
 
     <div class="main">
