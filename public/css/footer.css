@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+}
+
+.footer img{
+    position: relative;
+    width: auto;
+    height: 70px;
+    top: 12px;
+}
+
+.footer .title{
+    position:absolute;
+    font-size: 50px;
+    color: aqua;
+    bottom: 2%;
+    right: 5%;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-weight: bold;
+}
+
+.footer .comments{
+    position: absolute;
+    top:5%;
+    color: aqua;
+    width: 75%;
+    padding-left: 25%;
+    text-align: left;
+}

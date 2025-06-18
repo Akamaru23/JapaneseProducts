@@ -1,0 +1,66 @@
+
+.Create{
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+    display: inline;
+}
+
+.Create .CreateImg{
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 300px;
+    height: 500px;
+}
+.Create .CreateImg .Create_url_or_Img{
+    position: absolute;
+    top: 20%;
+}
+
+.Create .CreateImg .Create_url_or_Img .imgLine{
+    width: 300px;
+    height: 210px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.Createv .CreateImg .Create_url_or_Img .imgLine img{
+    width: 300px;
+    height: 210px;
+    border-radius: 10px
+}
+
+.Create .CreateColm{
+    position: relative;
+    left: 0%;
+    width: 40%;
+    display: block;
+}
+
+.Create .Createform{
+    height: 70px;
+    text-align:left;
+}
+
+.Create .CreateColm h3{
+    display: inline-flex;
+}
+
+.Create .CreateColm textarea{
+    margin-top: 5px;
+    height: 50px;
+    width: 80%;
+}
+
+.space50px{
+    height: 50px;
+}
+
+.space100px{
+    height: 100px;
+}
+
+.space200px{
+    height: 200px;
+}

@@ -1,0 +1,12 @@
+.contents{
+    position: relative;
+    top: 0%;
+}
+
+.products{
+    display:block;
+}
+
+.contents h1{
+    display:inline;
+}

@@ -1,0 +1,90 @@
+
+
+/*"各縣的推薦"のcss*/
+
+.block{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    font-size: 40px;
+}
+
+.swiper{
+    width: 100%;
+    height: 500PX;
+}
+
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img{
+    padding-left: 5%;
+    display: block;
+    width: 90%;
+}
+
+.space100{
+    position: relative;
+    height: 100px;
+}
+
+.space200{
+    position: relative;
+    height: 200px;
+}
+
+
+
+.block2{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: 80px;
+    font-size: 40px;
+}
+
+.exampleSouvenir{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    display: inline-flex;
+}
+
+.exampleSouvenir .SouvenirContent{
+    width: 50%;
+    height: 100%;
+}
+
+.exampleSouvenir .SouvenirContent .comment{
+    margin: 10%;
+}
+
+.exampleSouvenir .SouvenirImg{
+    width: 50%;
+    height: 100%;
+}
+
+.exampleSouvenir .SouvenirImg img{
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+}
+
+/*commentsのcss*/
+.comments{
+    position: relative;
+    top: 50px;
+    left: 25%;
+    width: 50%;
+    height: 400px;
+}
+
+.comments .inputText{
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 80px;
+}

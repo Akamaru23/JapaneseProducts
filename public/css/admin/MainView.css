@@ -1,0 +1,10 @@
+.main{
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    width: 79%;
+}
+
+.test{
+    background-color: aqua
+}
