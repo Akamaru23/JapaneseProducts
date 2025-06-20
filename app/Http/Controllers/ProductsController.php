@@ -131,7 +131,9 @@ class ProductsController extends Controller
 
         if ($request->input('image_or_url') === 'image') {
             $uploadedFile = $request->file('ProductImg');
-            $filename = $uploadedFile->getClientOriginalName();
+            $originalName = $uploadedFile->getClientOriginalName();
+            $extension = pathinfo($originalName, PATHINFO_EXTENSION);
+            $filename = time() . "." . $extension;
             $uploadedFile->storeAs('uploads', $filename, 'public');
             $input['ProductImg'] = $filename;
         } elseif ($request->input('image_or_url') === 'url') {
