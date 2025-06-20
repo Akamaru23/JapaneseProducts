@@ -62,7 +62,7 @@
 
         <label for="ProductImg">イメージURL</label>
         <input id="ProductImg" name="ProductImg" value="{{ $products->products_img }}" type="text">
-        <img class="Detail_Database_imageURL" src="{{ asset('storage/uploads/' . $products->products_img ) }}" onerror="this.onerror=null; this.src='{{ $products->products_img }}'" alt="">
+        <img class="Detail_Database_imageURL" src="{{ asset('storage/uploads/' . $products->products_img) }}" onerror="this.onerror=null; this.src='{{ $products->products_img }}'" alt="">
         @if($errors->has('ProductImg'))
             <h3>{{ $errors->first('ProductImg') }}</h3>
         @endif
