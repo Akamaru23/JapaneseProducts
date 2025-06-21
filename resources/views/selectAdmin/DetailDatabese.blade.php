@@ -48,7 +48,7 @@
         </ul>
     @endif
     
-    <form method="POST" action="{{ route('update') }}">
+    <form method="POST" action="{{ route('update') }}" >
         @csrf
         <input type="hidden" name="id" value="{{ $products->id }}">
         
@@ -62,12 +62,11 @@
 
         <label for="ProductImg">イメージURL</label>
         <input id="ProductImg" name="ProductImg" value="{{ $products->products_img }}" type="text">
-        <img class="Detail_Database_imageURL" src="/storage/uploads/1750379440.jpg" onerror="this.onerror=null; this.src='{{ $products->products_img }}'" alt="画像出力ミス">
-        <!--<a href="/storage/uploads/1750379440.jpg">test</a>-->
+        <img class="Detail_Database_imageURL" src="{{ '/storage/' . $products[ProductImg] }}" onerror="this.onerror=null; this.src='{{ $products->products_img }}'" alt="画像出力ミス">
         @if($errors->has('ProductImg'))
             <h3>{{ $errors->first('ProductImg') }}</h3>
         @endif
-        
+
         <br>
 
 
