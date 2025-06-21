@@ -62,7 +62,7 @@
 
         <label for="ProductImg">イメージURL</label>
         <input id="ProductImg" name="ProductImg" value="{{ $products->products_img }}" type="text">
-        <img class="Detail_Database_imageURL" src="{{ '/storage/' . $products[ProductImg] }}" onerror="this.onerror=null; this.src='{{ $products->products_img }}'" alt="画像出力ミス">
+        <img class="Detail_Database_imageURL" src="{{ '/storage/' . $products->products_img }}" onerror="this.onerror=null; this.src='{{ $products->products_img }}'" alt="画像出力ミス">
         @if($errors->has('ProductImg'))
             <h3>{{ $errors->first('ProductImg') }}</h3>
         @endif

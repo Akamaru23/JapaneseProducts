@@ -126,17 +126,19 @@ class ProductsController extends Controller
 
     public function uploadImg(EditRequest $request){
 
-
         $input = $request->all();
 
         if ($request->input('image_or_url') === 'image') {
-            if($request -> hasFile('ProductImg')){
-                $path = Storage::put('/public', $request->file('ProductImg'));
-                $path = explode('/', $path);
 
-                $input['ProductImg'] = $request->input('ProductImg');
+            $image = $request->file('ProductImg');
+
+            if($request -> hasFile('ProductImg')){
+                $path = Storage::put('/public', $image);
+                $input['ProductImg'] = basename($path);
+                logger($input['ProductImg']);
             }else{
-                dd("error");
+                dd("imageがないです");
+                $path = null;
             }
         } elseif ($request->input('image_or_url') === 'url') {
             $input['ProductImg'] = $request->input('ProductImgUrl');
@@ -155,6 +157,7 @@ class ProductsController extends Controller
             ]);
             DB::commit();
         }catch(Throwable $e){
+            dd($e->getMessage());
             DB::rollback();
             abort(500);
         }
