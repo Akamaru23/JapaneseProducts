@@ -17,7 +17,6 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // セッションに'is_admin'がなければログインページへリダイレクト
         if (!Session::has('is_admin') || !Session::get('is_admin')) {
             return redirect('/2bVtbHzQ/admin');
         }
