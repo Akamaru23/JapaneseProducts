@@ -85,10 +85,10 @@
         
         <div class="CreateImg">
             <label>
-                <input type="radio" name="image_or_url" value="image" checked onclick="toggleInput('image')"> 画像をアップロード
+                <input type="radio" name="image_or_url" value="image" checked onclick="toggleInput('image')"> 上傳圖片
             </label>
             <label>
-                <input type="radio" name="image_or_url" value="url" onclick="toggleInput('url')"> URLを入力
+                <input type="radio" name="image_or_url" value="url" onclick="toggleInput('url')"> 輸入URL
             </label>
 
             <div id="imageInputContainer" class="Create_url_or_Img">
@@ -97,18 +97,18 @@
                 <div class="imgLine">
                     <img id="preview" src="#" alt="画像プレビュー" style="display:none; max-width: 300px;"/>
                 </div>
-                <button type="button" id="cancelButton" style="display: none;">キャンセル</button>
+                <button type="button" id="cancelButton" style="display: none;">取消</button>
             </div>
 
             <div id="urlInputContainer" class="Createform" style="display: none;">
-                <h3>画像URL : </h3><input type="text" name="ProductImgUrl">
+                <h3>圖片URL : </h3><input type="text" name="ProductImgUrl">
             </div>
             
         </div>
 
     </div>
     <br><br>
-    <button type="submit">アップロード</button>
+    <button type="submit">上傳</button>
 
 </form>
 
@@ -116,5 +116,5 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('/js/admin/showImg.js') }}"></script>
+    <script src="{{ asset('/js/admin/showImg.js') }}"></script>
 @endsection

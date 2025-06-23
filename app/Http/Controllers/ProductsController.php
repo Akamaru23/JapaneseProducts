@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use LDAP\Result;
 use Psy\Readline\Hoa\Console;
+use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
 use Throwable;
 
 class ProductsController extends Controller
@@ -389,7 +390,37 @@ class ProductsController extends Controller
     }
 
     public function exeEdit(EditRequest $request){
+
         $input = $request->all();
+
+        $content = Products::find($input['id']);
+        $oldImage = $content->products_img;
+
+        if($request->input('image_or_url') === "url"){
+            $input['ProductImg'] = $request->input('ProductImgUrl');
+
+            // 古い画像が存在し、かつURLでなくファイル名の場合のみ削除
+            if ($oldImage && Storage::exists('public/' . $oldImage)) {
+                Storage::delete('public/' . $oldImage);
+            }
+        }elseif($request->input('image_or_url') === 'image'){
+            $image = $request->file('ProductImg');
+
+            if($request->hasFile('ProductImg')){
+                $path = Storage::put('/public', $image);
+                $input['ProductImg'] = basename($path);
+
+                // 古い画像が存在し、かつURLでなくファイル名の場合のみ削除
+                if ($oldImage && Storage::exists('public/' . $oldImage)) {
+                    Storage::delete('public/' . $oldImage);
+                }
+            }else{
+                dd("img_addressでエラーが起きています");
+                $path = null;
+            }
+        }else{
+            return back()->withErrors(['image_or_url' => '画像またはURLを選択してください']);
+        }
 
         DB::beginTransaction();
         try{
@@ -404,6 +435,7 @@ class ProductsController extends Controller
             $content->save();
             DB::commit();
         }catch(Throwable $e){
+            dd($e->getMessage());
             DB::rollback();
             throw $e;
         }
