@@ -89,10 +89,4 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            alert('image_or_url:' + document.querySelector('input[name="image_or_url"]:checked').value);
-        });
-    }
 });
