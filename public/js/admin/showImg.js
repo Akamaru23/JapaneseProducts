@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
 })
-t.getElementById('urlInputContainer');
 
 function toggleInput(type) {
     if (type === 'image') {

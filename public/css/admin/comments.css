@@ -1,17 +1,13 @@
 .com{
     position: relative;
-    left: 0%;
     width: 80%;
     height: 100%;
     border-radius: 10px;
-    border: 1px solid black;
-    overflow: scroll;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .subject{
-    text-align: center;
-}
-
-.content{
     text-align: center;
 }
