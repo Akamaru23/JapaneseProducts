@@ -1,4 +1,6 @@
 const input = document.getElementById('imageInput');
+const input_url = document.getElementById('UrlInput');
+
 const preview = document.getElementById('preview');
 const cancelButton = document.getElementById('cancelButton');
 
@@ -26,15 +28,31 @@ document.addEventListener('DOMContentLoaded', function(){
 
     });
 
-})
+    input_url.addEventListener('change', function(){
+        const url_preview = document.getElementById('preview_url');
+        url_preview.style.display = 'block';
+        url_preview.src = input_url.value;
+    });
 
+})
+t.getElementById('urlInputContainer');
 
 function toggleInput(type) {
     if (type === 'image') {
         document.getElementById('imageInputContainer').style.display = 'block';
         document.getElementById('urlInputContainer').style.display = 'none';
+        
+        const url_preview = document.getElementById('preview_url');
+        input_url.value='';
+        url_preview.src = '';
+        url_preview.style.display = 'none';
     } else if (type === 'url') {
         document.getElementById('imageInputContainer').style.display = 'none';
         document.getElementById('urlInputContainer').style.display = 'block';
+        
+        input.value='';
+        preview.src = '';
+        preview.style.display = 'none';
+        cancelButton.style.display = 'none';
     }
 }

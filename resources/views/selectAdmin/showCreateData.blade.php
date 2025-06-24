@@ -47,18 +47,21 @@
     @endif
 
 
-<form action="{{ route('Img') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="Create">
+<div class="Create">
+
+    <form action="{{ route('Img') }}" method="POST" enctype="multipart/form-data">
+        @csrf
 
         <div class="CreateColm">
             <h3>商品名 : </h3><input type="text" name="ProductName">
         </div>
         
-        <br><div class="Createform">
+        <br>
+        
+        <div class="Createform">
             <h3>県名 : </h3>
             <select name="Prefecture">
-                <option value="">選択してください</option>
+                <option value="">請你選擇一個縣市</option>
                 <option value="北海道">北海道</option>
                 <option value="青森県">青森県</option>
                 <option value="岩手県">岩手県</option>
@@ -72,14 +75,15 @@
             </select>
         </div>
 
-        <br><div class="Createform">
+        <br>
+        
+        <div class="Createform">
             <h3>説明 : </h3>    <textarea name="description"></textarea>
         </div>
 
         <br><div class="Createform">
             <h3>官方網站URL : </h3><input type="text" name="url">
         </div>
-        <div class="CreateColm"></div>
 
         <br>
         
@@ -94,23 +98,28 @@
             <div id="imageInputContainer" class="Create_url_or_Img">
                 <input type="file" id="imageInput" name="ProductImg">
                 <br>
-                <div class="imgLine">
-                    <img id="preview" src="#" alt="画像プレビュー" style="display:none; max-width: 300px;"/>
-                </div>
+
+                <img class="Detail_Database_imageURL" id="preview" src="#" alt="画像プレビュー" style="display:none;">
+                
+                <br>
                 <button type="button" id="cancelButton" style="display: none;">取消</button>
             </div>
 
             <div id="urlInputContainer" class="Createform" style="display: none;">
-                <h3>圖片URL : </h3><input type="text" name="ProductImgUrl">
+                <h3>圖片URL : </h3><input type="text" id="UrlInput" name="ProductImgUrl">
+                
+                <img class="Detail_Database_imageURL" id="preview_url" src="#" alt="画像プレビュー" style="display:none;">
+                
             </div>
             
         </div>
 
-    </div>
-    <br><br>
-    <button type="submit">上傳</button>
+        <br><br>
+        <button type="submit">上傳</button>
 
-</form>
+    </form>
+
+</div>
 
     
 @endsection
