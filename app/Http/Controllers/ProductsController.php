@@ -193,6 +193,7 @@ class ProductsController extends Controller
             $ids = explode("\n", trim(Storage::get($filePath)));
 
             if (empty($ids)) {
+                dd("test");
                 return response()->json(['message' => 'IDが見つかりません'], 404);
             }
 
@@ -210,14 +211,15 @@ class ProductsController extends Controller
 
         $id = $request->input('id');
         $no = $request->input('no');
-        $no_data = Products::find($id);
 
         if(empty($id)){
-            return back();
-        }elseif(is_null($no_data)){
-            Session::flash('err_msg', 'データがありません');
-            return back();
+            $data = Products::query();
+
+            return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => null, 'no' => $no]);
         }else{
+
+            $no_data = Products::find($id);
+            
             $data = Products::query();
 
             $data->where('products_names', 'like', '%' . $no_data->products_names . '%')->where('id', '!=', $no_data->id);
@@ -258,17 +260,31 @@ class ProductsController extends Controller
     }
 
     public function showSearchTop3(SearchRequest $Srequest, $no, $id){
+
         $data = Products::query();
-        $no_data = Products::find($id);
-        
 
-        if ($Srequest->filled('SearchProducts_names')) {
-            $data->where('products_names', 'like', '%' . $Srequest->input('SearchProducts_names') . '%');
+        if($id=0){
+            
+            if ($Srequest->filled('SearchProducts_names')) {
+                $data->where('products_names', 'like', '%' . $Srequest->input('SearchProducts_names') . '%');
+            }
+
+            $data = $data->get();
+
+            return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => 0, 'no' => $no] );
+
+        }else{
+            $no_data = Products::find($id);
+            
+
+            if ($Srequest->filled('SearchProducts_names')) {
+                $data->where('products_names', 'like', '%' . $Srequest->input('SearchProducts_names') . '%');
+            }
+
+            $data = $data->get();
+
+            return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => $no_data, 'no' => $no] );
         }
-
-        $data = $data->get();
-
-        return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => $no_data, 'no' => $no] );
     }
     
 
