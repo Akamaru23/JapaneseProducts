@@ -16,18 +16,18 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-<div class="block" id="1">各縣的推薦</div>
+<div class="block">各縣的推薦</div>
 
 <div class="swiper onceSwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <a href="#1"><img src="{{ asset('uploads/' . $data[0]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[0]->products_img }}'" alt=""></a>
+            <a href="#1"><img src="{{ asset( '/storage/' . $data[0]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[0]->products_img }}'" alt=""></a>
         </div>
         <div class="swiper-slide">
-            <a href="#2"><img src="{{ asset('uploads/' . $data[1]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[1]->products_img }}'" alt=""></a>
+            <a href="#2"><img src="{{ asset( '/storage/' . $data[1]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[1]->products_img }}'" alt=""></a>
         </div>
         <div class="swiper-slide">
-            <a href="#3"><img src="{{ asset('uploads/' . $data[2]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[2]->products_img }}'" alt=""></a>
+            <a href="#3"><img src="{{ asset( '/storage/' . $data[2]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[2]->products_img }}'" alt=""></a>
         </div>
     </div>
     
@@ -52,7 +52,7 @@
     </div>
     
     <div class="SouvenirImg">
-        <img src="{{ asset('storage/uploads/' . $data[0]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[0]->products_img }}'" alt="">
+        <img src="{{ asset( '/storage/' . $data[0]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[0]->products_img }}'" alt="">
     </div>
 
 </div>
@@ -61,7 +61,7 @@
 
 
     <div class="SouvenirImg"  id="2">
-        <img src="{{ asset('storage/uploads/' . $data[1]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[1]->products_img }}'" alt="">
+        <img src="{{ asset( '/storage/' . $data[1]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[1]->products_img }}'" alt="">
     </div>
     
     <div class="SouvenirContent">
@@ -86,7 +86,7 @@
     </div>
     
     <div class="SouvenirImg">
-        <img src="{{ asset('storage/uploads/' . $data[2]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[2]->products_img }}'" alt="">
+        <img src="{{ asset( '/storage/' . $data[2]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[2]->products_img }}'" alt="">
     </div>
 
 </div>

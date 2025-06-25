@@ -5,18 +5,39 @@
 @endsection
 
 @section('content')
-    @for($i=0; $i<count($data); $i+=1)
-        <div class="context">
-            <h1>No. {{$i+1}}</h1>
-            <h1 class="title">{{ $data[$i]->products_names }}</h1>
-            <img class="image" src="{{ asset('storage/uploads/' . $data[$i]->products_img) }}" onerror="this.onerror=null; this.src='{{ $data[$i]->products_img }}'" alt="">
 
-            <form action="{{ route('showUpdateTop3') }}" method="POST">
-                @csrf
-                <input type="hidden" name="id" value="{{ $data[$i]->id }}">
-                <input type="hidden" name="no" value="{{ $i+1 }}">
-                <button class="update" type="submit">更新這個禮物</button>
-            </form>
-        </div>
+    @for($i=0; $i<3; $i+=1)
+        @if(isset($data[$i]))
+            <div class="context">
+                <h1>No. {{$i+1}}</h1>
+                <h1 class="title">{{ $data[$i]->products_names }}</h1>
+                <img class="image"
+                        src="{{ '/storage/' . $data[$i]->products_img }}"
+                        onerror="this.onerror=null; this.src='{{ $data[$i]->products_img }}';"
+                        alt="">
+
+                <form action="{{ route('showUpdateTop3') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $data[$i]->id }}">
+                    <input type="hidden" name="no" value="{{ $i+1 }}">
+                    <button class="update" type="submit">更新這個禮物</button>
+                </form>
+            </div>
+        @else
+            <div class="context">
+                <h1>No. {{$i+1}}</h1>
+                <h1 class="title">沒有這個禮物</h1>
+                <img class="image" src="{{ asset('img/sample.webp') }}" alt="">
+
+                <form action="{{ route('showUpdateTop3') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="no" value="{{ $i+1 }}">
+                    <button class="update" type="submit">更新這個禮物</button>
+                </form>
+            </div>
+        @endif
     @endfor
+
+
 @endsection
