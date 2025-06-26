@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rules\Exists;
 use LDAP\Result;
 use Psy\Readline\Hoa\Console;
 use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
@@ -293,6 +294,7 @@ class ProductsController extends Controller
     }
     
     public function showSearchRank(SearchRequest $request){
+
         $data = Ranking::query();
 
         if($request->filled('SearchPrefecture')){
@@ -301,22 +303,33 @@ class ProductsController extends Controller
 
         $data = $data->get();
 
-        return view('selectAdmin.SearchRank', ['data' => $data]);
+        return view('selectAdmin.SearchRank', ['data' => $data], ['Prefecture' => $request->input('SearchPrefecture')]);
+
     }
 
-    public function showchangeRank($id){
+    public function showchangeRank(SearchRequest $request, $id){
+
+        $Prefecture = $request->input('SearchPrefecture');
 
         $no_data = Ranking::find($id);
 
         if(empty($id)){
+            dump("test2");
             return back();
         }elseif(is_null($no_data)){
-            Session::flash('err_msg', 'データがありません');
-            return back();
+            dump("test3");
+
+            $data = Products::query();
+            
+            $data->where('Prefecture', $Prefecture);
+            $data = $data->get();
+
+            return view('selectAdmin.changeRank', ['data' => $data], ['no_data' => $id]);
         }else{
+            dump("test4");
             $data = Products::query();
 
-            $data->where('Prefecture', $no_data->Prefecture);
+            $data->where('Prefecture', $Prefecture);
             $data = $data->get();
 
             return view('selectAdmin.changeRank', ['data' => $data], ['no_data' => $no_data]);
