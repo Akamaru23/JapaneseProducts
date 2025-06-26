@@ -27,17 +27,41 @@
     </form>
 </div>
 
-    @for($i = 1; $i <4; $i++)
-        @for($j = 0; $j <3; $j++)
-            @if($data[$j]->rank == $i)
+    @for($i = 1; $i < 4; $i++)
+        @php $found = false; @endphp
+
+        @if(is_null($data) || count($data) === 0)
+            <h1>test1</h1>
+            <h1>{{ $i }}</h1>
+            <h1>No any data</h1>
+            <form action="{{ route('changeRank', ['id' => $i]) }}" method="POST">
+                @csrf
+                <input type="hidden" name="SearchPrefecture" value="{{ $Prefecture }}">
+                <button type="submit">更新</button>
+            </form>
+        @else
+            @for($j = 0; $j < count($data); $j++)
+                @if(isset($data[$j]) && $data[$j]->rank == $i)
+                    @php $found = true; @endphp
                     <h1>{{ $data[$j]->rank }}</h1>
                     <h1>{{ $data[$j]->products_name }}</h1>
-                <form action="{{ route('changeRank', $data[$j]->id)}}"  method="POST">
+                    <form action="{{ route('changeRank', $data[$j]->id)}}"  method="POST">
+                        @csrf
+                        <button type="submit">更新</button>
+                    </form>
+                @endif
+            @endfor
+
+            @if(!$found)
+                <h1>test2</h1>
+                <h1>{{ $i }}</h1>
+                <h1>No any data</h1>
+                <form action="{{ route('changeRank', ['id' => $i])}}"  method="POST">
                     @csrf
+                    <input type="hidden" name="SearchPrefecture" value="{{ $Prefecture }}">
                     <button type="submit">更新</button>
                 </form>
             @endif
-        @endfor
+        @endif
     @endfor
-
 @endsection
