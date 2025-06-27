@@ -317,7 +317,6 @@ class ProductsController extends Controller
             dump("test2");
             return back();
         }elseif(is_null($no_data)){
-            dump("test3");
 
             $data = Products::query();
             
@@ -353,27 +352,43 @@ class ProductsController extends Controller
         $products_data = Products::find($id);
         $rank_data = Ranking::find($no_id);
 
-        if(is_null($products_data) || is_null($rank_data)){
-            Session::flash('err_msg', '沒有任何資料');
-            return back();
-        }
 
-        DB::beginTransaction();
-        try{
-            $rank_data->update([
-                'products_name' => $products_data->products_names,
-                'Prefecture' => $products_data->Prefecture,
-                'products_img' => $products_data->products_img,
-                'description' => $products_data->description,
-                'url' => $products_data->url,
-                
-            ]);
-            DB::commit();
-            Session::flash('err_msg', '已更新資料');
-        }catch(Throwable $e){
-            DB::rollback();
-            Session::flash('err.msg', '失敗更新資料');
-            throw $e;
+        if(is_null($products_data) || is_null($rank_data)){
+            DB::beginTransaction();
+            try{
+                Ranking::create([
+                    'products_name' => $products_data->products_names,
+                    'Prefecture' => $products_data->Prefecture,
+                    'products_img' => $products_data->products_img,
+                    'description' => $products_data->description,
+                    'url' => $products_data->url,
+                    'rank' => $no_id
+                ]);
+                DB::commit();
+                Session::flash('err_msg', '已更新資料');
+            }catch(Throwable $e){
+                DB::rollback();
+                Session::flash('err.msg', '失敗更新資料');
+                throw $e;
+            }
+        }else{
+            DB::beginTransaction();
+            try{
+                $rank_data->update([
+                    'products_name' => $products_data->products_names,
+                    'Prefecture' => $products_data->Prefecture,
+                    'products_img' => $products_data->products_img,
+                    'description' => $products_data->description,
+                    'url' => $products_data->url,
+                    
+                ]);
+                DB::commit();
+                Session::flash('err_msg', '已更新資料');
+            }catch(Throwable $e){
+                DB::rollback();
+                Session::flash('err.msg', '失敗更新資料');
+                throw $e;
+            }
         }
 
         return view('selectAdmin.rank');

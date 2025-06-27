@@ -31,7 +31,6 @@
         @php $found = false; @endphp
 
         @if(is_null($data) || count($data) === 0)
-            <h1>test1</h1>
             <h1>{{ $i }}</h1>
             <h1>No any data</h1>
             <form action="{{ route('changeRank', ['id' => $i]) }}" method="POST">
@@ -45,6 +44,7 @@
                     @php $found = true; @endphp
                     <h1>{{ $data[$j]->rank }}</h1>
                     <h1>{{ $data[$j]->products_name }}</h1>
+                    <img src="{{ asset( '/storage/' . $data[$j]->products_img ) }}" onerror="this.error=null; this.src='{{ $data[$j]->products_img }}'" alt="">
                     <form action="{{ route('changeRank', $data[$j]->id)}}"  method="POST">
                         @csrf
                         <button type="submit">更新</button>
@@ -53,7 +53,6 @@
             @endfor
 
             @if(!$found)
-                <h1>test2</h1>
                 <h1>{{ $i }}</h1>
                 <h1>No any data</h1>
                 <form action="{{ route('changeRank', ['id' => $i])}}"  method="POST">
