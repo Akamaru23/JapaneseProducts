@@ -6,26 +6,30 @@
 
 @section('content')
 
-    <h1>No. {{ $no }}</h1>
+    <h1 id="line_txet">No. {{ $no }}</h1>
 
     @if(is_null($no_data))
         <form action="{{ route('showSearchTop3', [$no, 0]) }}" method="POST">
             @csrf
             <label for="SearchProducts_names">從禮物名來查詢</label>
-            <input type="text" id="SearchProducts_names" name="SearchProducts_names">
-            <button type="submit">查詢</button>
+            <div class="SearchForm">
+                <input type="text" id="SearchProducts_names" name="SearchProducts_names">
+                <button type="submit">查詢</button>
+            </div>
         </form>
     @else
-        <h1>{{ $no_data->products_names }}</h1>
-        <img src="{{ asset('storage/uploads/' . $no_data->products_img) }}" onerror="this.onerror=null; this.src='{{ $no_data->products_img }}'" alt="">
+        <h1 id="line_txet">{{ $no_data->products_names }}</h1>
+        <img class="image_No" src="{{ asset('/storage/' . $no_data->products_img) }}" onerror="this.onerror=null; this.src='{{ $no_data->products_img }}'" alt="">
 
         <div class="space50px"></div>
 
         <form action="{{ route('showSearchTop3', [$no, $no_data->id]) }}" method="POST">
             @csrf
             <label for="SearchProducts_names">從禮物名來查詢</label>
-            <input type="text" id="SearchProducts_names" name="SearchProducts_names">
-            <button type="submit">查詢</button>
+            <div class="SearchForm">
+                <input type="text" id="SearchProducts_names" name="SearchProducts_names">
+                <button type="submit">查詢</button>
+            </div>
         </form>
     @endif
 
