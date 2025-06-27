@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @if(isset($no_data) && $no_data == null)
+    @if(!isset($no_data) || $no_data == null)
         <h1>{{ $no_data->products_name }}</h1>
         <img src="{{ asset('storage/uploads/' . $no_data->products_img) }}" onerror="this.onerror=null; this.src='{{ $no_data->products_img }}'" alt="you didnt set img">
 
@@ -20,22 +20,21 @@
         </form>
     @endif
 
-    @foreach($data as $data)
+        @foreach($data as $data)
+
+            <div class="space100px"></div>
+
+            <div class="content">
+                <h2>{{ $data->products_names }}</h2>
+                <img class="image" src="{{ asset( '/storage/' . $data->products_img ) }}" onerror="this.onerror=null; this.src='{{ $data->products_img }}'" alt="">
+                
+                <form action="{{ route('updateRank', [ $data->id, $no_data ]) }}" method="POST">
+                    @csrf
+                    <button class="updateButton" type="submit">換禮物</button>
+                </form>
+            </div>
 
 
-        <div class="space100px"></div>
 
-        <div class="content">
-            <h2>{{ $data->products_names }}</h2>
-            <img class="image" src="{{ asset( '/storage/' . $data->products_img ) }}" onerror="this.onerror=null; this.src='{{ $data->products_img }}'" alt="">
-            
-            <form action="{{ route('updateRank', [$data->id, {{ $no_data }} ] ) }}" method="POST">
-                @csrf
-                <button class="updateButton" type="submit">換禮物</button>
-            </form>
-        </div>
-
-
-
-    @endforeach
+        @endforeach
 @endsection

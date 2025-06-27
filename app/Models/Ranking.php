@@ -16,7 +16,7 @@ class Ranking extends Model
         'products_name',
         'products_img',
         'description',
-        'SalesArea',
+        'url',
     ];
 
     use HasFactory;
