@@ -314,7 +314,6 @@ class ProductsController extends Controller
         $no_data = Ranking::find($id);
 
         if(empty($id)){
-            dump("test2");
             return back();
         }elseif(is_null($no_data)){
 
@@ -325,7 +324,6 @@ class ProductsController extends Controller
 
             return view('selectAdmin.changeRank', ['data' => $data], ['no_data' => $id]);
         }else{
-            dump("test4");
             $data = Products::query();
 
             $data->where('Prefecture', $Prefecture);

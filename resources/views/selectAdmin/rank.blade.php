@@ -1,5 +1,9 @@
 @extends('admin')
 
+@section('style')
+    <link rel="stylesheet" href="{{ asset('/css/admin/rank.css') }}">
+@endsection
+
 @section('content')
 <div class="Search">
     <h1>查詢資料</h1>
