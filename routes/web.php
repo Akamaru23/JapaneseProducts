@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\RankController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -42,10 +43,11 @@ Route::middleware(['admin'])->group(function () {
     Route::post('/2bVtbHzQ/admin/top3rank/update/{rank}', [ProductsController::class, 'exeUpdateTop3'])->name('updateTop3');
     Route::post('/2bVtbHzQ/admin/top3rank/Search/edit/SearchProducts/{no}/{no_id}', [ProductsController::class, 'showSearchTop3'])->name('showSearchTop3');
     Route::get('/2bVtbHzQ/admin/rank', [ProductsController::class, 'showRank'])->name('rank');
-    Route::get('/2bVtbHzQ/admin/rank/Search', [ProductsController::class, 'showSearchRank'])->name('searchRank');
-    Route::post('/2bVtbHzQ/admin/rank/Search/edit/{id}', [ProductsController::class, 'showchangeRank'])->name('changeRank');
-    Route::post('/2bVtbHzQ/admin/rank/Search/edit/SearchProducts/{id}', [ProductsController::class, 'showSearchProducts'])->name('showSearchProducts');
-    Route::post('/2bVtbHzQ/admin/rank/Search/edit/changeRank/{id}/{no_id}', [ProductsController::class, 'exeUpdateRank'])->name('updateRank');
+
+    Route::get('/2bVtbHzQ/admin/rank/Search', [RankController::class, 'showSearchRank'])->name('searchRank');
+    Route::post('/2bVtbHzQ/admin/rank/Search/edit/{id}', [RankController::class, 'showChangeRank'])->name('changeRank');
+    Route::get('/2bVtbHzQ/admin/rank/Search/edit/SearchProducts', [RankController::class, 'showSearchProducts'])->name('showSearchProducts');
+    Route::post('/2bVtbHzQ/admin/rank/Search/edit/changeRank/{id}', [RankController::class, 'exeUpdateRank'])->name('updateRank');
 
     //serch database in side bar
     Route::post('/2bVtbHzQ/admin/database', [ProductsController::class, 'exeSearch'])->name('search');

@@ -26,6 +26,7 @@ class SearchRequest extends FormRequest
         return [
             'SearchPrefecture' => 'nullable|string',
             'SearchProducts_names' => 'nullable|string',
+            'Search_id' => 'nullable|integer'
         ];
     }
 

@@ -29,9 +29,13 @@
             </div>
         @else
             <div class="context">
-                <h1>No. {{$i+1}}</h1>
-                <h1 class="title">沒有這個禮物</h1>
-                <img class="image" src="{{ asset('img/sample.webp') }}" alt="">
+                <div class="half-content">
+                    <h1>No. {{$i+1}}</h1>
+                    <h1 class="title">沒有這個禮物</h1>
+                </div>
+                <div class="img-content">
+                    <img class="image" src="{{ asset('img/sample.webp') }}" alt="">
+                </div>
 
                 <form action="{{ route('showUpdateTop3') }}" method="POST">
                     @csrf

@@ -31,17 +31,21 @@
         </form>
     </div>
 
-    @for($i = 1; $i < 4; $i++)
+    <h1>{{ $Prefecture }}</h1>
+
+    @for($i=1; $i<4; $i++)
         @php $found = false; @endphp
 
         @for($j = 0; $j < count($data); $j++)
             @if(isset($data[$j]) && $data[$j]->rank == $i)
                 @php $found = true; @endphp
-                <h1 class="line-content">No.{{ $data[$j]->rank }},</h1>
+                <h1 class="line-content">No.{{ $i }},</h1>
                 <h1 class="line-content">{{ $data[$j]->products_name }}</h1>
-                <form class="change-form" action="{{ route('changeRank', $data[$j]->id)}}"  method="POST">
+                <form class="change-form" action="{{ route('changeRank', ['id' => $i])}}"  method="POST">
                     @csrf
                     <img src="{{ asset( '/storage/' . $data[$j]->products_img ) }}" onerror="this.error=null; this.src='{{ $data[$j]->products_img }}'" alt="">
+                    <input type="hidden" name="SearchPrefecture" value="{{ $data[$j]->Prefecture }}">
+                    <input type="hidden" name="Search_id" value="{{ $data[$j]->id }}">
                     <button type="submit">更新</button>
                 </form>
             @endif
@@ -59,4 +63,5 @@
         @endif
 
     @endfor
+
 @endsection

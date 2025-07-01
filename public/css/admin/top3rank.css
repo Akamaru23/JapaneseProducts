@@ -1,3 +1,11 @@
+body{
+    background: linear-gradient(120deg, #f0f4f9 0%, #d9e7fa 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .context{
     position: relative;
     left: 0%;
@@ -6,6 +14,8 @@
     margin: 50px, 0px;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 10px;
 }
 
 .half-content{
@@ -53,6 +63,7 @@
     max-height: 90%;
     height: auto;
     object-fit: contain;
+    border-radius: 20px;
 }
 
 
