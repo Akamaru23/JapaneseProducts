@@ -1,7 +1,7 @@
 @extends('admin')
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('/css/admin/changeRank.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/admin/changeTop3Rank.css') }}">
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
         <form action="{{ route('showSearchTop3', [$no, 0]) }}" method="POST">
             @csrf
             <label for="SearchProducts_names">從禮物名來查詢</label>
-            <div class="SearchForm">
+            <div class="search">
                 <input type="text" id="SearchProducts_names" name="SearchProducts_names">
-                <button type="submit">查詢</button>
+                <button class="searchButton" type="submit">查詢</button>
             </div>
         </form>
     @else
@@ -26,14 +26,14 @@
         <form action="{{ route('showSearchTop3', [$no, $no_data->id]) }}" method="POST">
             @csrf
             <label for="SearchProducts_names">從禮物名來查詢</label>
-            <div class="SearchForm">
+            <div class="search">
                 <input type="text" id="SearchProducts_names" name="SearchProducts_names">
-                <button type="submit">查詢</button>
+                <button class="searchButton" type="submit">查詢</button>
             </div>
         </form>
     @endif
 
-    @foreach($data as $data)
+    @forelse($data as $data)
         <div class="space100px"></div>
 
         <div class="content">
@@ -47,6 +47,11 @@
             </form>
         </div>
 
+    @empty
 
-    @endforeach
+        <h1 class="error">沒有查詢結果</h1>
+
+    @endforelse
+
+
 @endsection

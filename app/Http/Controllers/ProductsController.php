@@ -13,11 +13,6 @@ use App\Http\Requests\CommentsRequest;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Validation\Rules\Exists;
-use LDAP\Result;
-use Psy\Readline\Hoa\Console;
-use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
 use Throwable;
 
 class ProductsController extends Controller
@@ -264,7 +259,7 @@ class ProductsController extends Controller
 
         $data = Products::query();
 
-        if($id=0){
+        if($id==0){
             
             if ($Srequest->filled('SearchProducts_names')) {
                 $data->where('products_names', 'like', '%' . $Srequest->input('SearchProducts_names') . '%');
@@ -272,17 +267,18 @@ class ProductsController extends Controller
 
             $data = $data->get();
 
-            return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => 0, 'no' => $no] );
+            return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => null, 'no' => $no] );
 
         }else{
+
             $no_data = Products::find($id);
-            
 
             if ($Srequest->filled('SearchProducts_names')) {
                 $data->where('products_names', 'like', '%' . $Srequest->input('SearchProducts_names') . '%');
             }
 
             $data = $data->get();
+
 
             return view('selectAdmin.changeTop3', ['data' => $data, 'no_data' => $no_data, 'no' => $no] );
         }
@@ -292,108 +288,6 @@ class ProductsController extends Controller
     public function showRank(){
         return view('selectAdmin.rank');
     }
-    
-    public function showSearchRank(SearchRequest $request){
-
-        $data = Ranking::query();
-
-        if($request->filled('SearchPrefecture')){
-            $data->where('Prefecture', 'like', '%' . $request->input('SearchPrefecture') . '%');
-        }
-
-        $data = $data->get();
-
-        return view('selectAdmin.SearchRank', ['data' => $data], ['Prefecture' => $request->input('SearchPrefecture')]);
-
-    }
-
-    public function showchangeRank(SearchRequest $request, $id){
-
-        $Prefecture = $request->input('SearchPrefecture');
-
-        $no_data = Ranking::find($id);
-
-        if(empty($id)){
-            return back();
-        }elseif(is_null($no_data)){
-
-            $data = Products::query();
-            
-            $data->where('Prefecture', $Prefecture);
-            $data = $data->get();
-
-            return view('selectAdmin.changeRank', ['data' => $data], ['no_data' => $id]);
-        }else{
-            $data = Products::query();
-
-            $data->where('Prefecture', $Prefecture);
-            $data = $data->get();
-
-            return view('selectAdmin.changeRank', ['data' => $data], ['no_data' => $no_data]);
-        }
-    }
-
-    public function showSearchProducts(SearchRequest $request, $id){
-        $data = Products::query();
-        $no_data = Ranking::find($id);
-
-        if ($request->filled('SearchProducts_names')) {
-            $data->where('products_names', 'like', '%' . $request->input('SearchProducts_names') . '%');
-        }
-
-        $data = $data->get();
-
-        return view('selectAdmin.changeRank', ['data' => $data], ['no_data' => $no_data] );
-    }
-
-    public function exeUpdateRank($id, $no_id){
-        $products_data = Products::find($id);
-        $rank_data = Ranking::find($no_id);
-
-
-        if(is_null($products_data) || is_null($rank_data)){
-            DB::beginTransaction();
-            try{
-                Ranking::create([
-                    'products_name' => $products_data->products_names,
-                    'Prefecture' => $products_data->Prefecture,
-                    'products_img' => $products_data->products_img,
-                    'description' => $products_data->description,
-                    'url' => $products_data->url,
-                    'rank' => $no_id
-                ]);
-                DB::commit();
-                Session::flash('err_msg', '已更新資料');
-            }catch(Throwable $e){
-                DB::rollback();
-                Session::flash('err.msg', '失敗更新資料');
-                throw $e;
-            }
-        }else{
-            DB::beginTransaction();
-            try{
-                $rank_data->update([
-                    'products_name' => $products_data->products_names,
-                    'Prefecture' => $products_data->Prefecture,
-                    'products_img' => $products_data->products_img,
-                    'description' => $products_data->description,
-                    'url' => $products_data->url,
-                    
-                ]);
-                DB::commit();
-                Session::flash('err_msg', '已更新資料');
-            }catch(Throwable $e){
-                DB::rollback();
-                Session::flash('err.msg', '失敗更新資料');
-                throw $e;
-            }
-        }
-
-        return view('selectAdmin.rank');
-
-    }
-
-
 
 
     public function showAdminDatabase(){
@@ -441,7 +335,6 @@ class ProductsController extends Controller
         if($request->input('image_or_url') === "url"){
             $input['ProductImg'] = $request->input('ProductImgUrl');
 
-            // 古い画像が存在し、かつURLでなくファイル名の場合のみ削除
             if ($oldImage && Storage::exists('public/' . $oldImage)) {
                 Storage::delete('public/' . $oldImage);
             }
@@ -452,7 +345,6 @@ class ProductsController extends Controller
                 $path = Storage::put('/public', $image);
                 $input['ProductImg'] = basename($path);
 
-                // 古い画像が存在し、かつURLでなくファイル名の場合のみ削除
                 if ($oldImage && Storage::exists('public/' . $oldImage)) {
                     Storage::delete('public/' . $oldImage);
                 }

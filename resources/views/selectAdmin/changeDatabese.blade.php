@@ -43,7 +43,7 @@
                     <h3>検索結果：</h3>
                     <li><a href="/2bVtbHzQ/admin/database/{{ $jpP->id }}">{{ $jpP->products_names }}（県名: {{ $jpP->Prefecture }}）</a></li>
                     @csrf
-                    <button  type="submit" onclick=>削除</button>
+                    <button class="delete" type="submit" onclick=>削除</button>
                 </form>
             @empty
                 <li>該当するユーザーはいません</li>
