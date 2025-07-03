@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="{{ asset('/css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/menu.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/search.css') }}">
-    <style>
-    </style>
+    <style></style>
 
     @yield('style')
 </head>
@@ -80,27 +77,8 @@
     @include('footer')
 
 
-    <script>
-        var swiper = new Swiper(".onceSwiper", {
-            spaceBetween: 30,
-            slidesPerView: 1,
-            freeMode: true,
-            loop: true,
-            watchSlidesProgress: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-    </script>
+    <script src="{{ asset('/js/swiper.js') }}"></script>
+    <script src="{{ asset('/js/header.js') }}"></script>
+    @yield('script')
 </body>
 </html>
