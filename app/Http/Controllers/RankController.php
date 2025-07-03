@@ -36,7 +36,7 @@ class RankController extends Controller
 
 
         $no_data = Ranking::query();
-        $no_data->where('Prefecture', Session::get('Prefecture'))->where('id', Session::get('id'));
+        $no_data->where('Prefecture', Session::get('Prefecture'))->where('rank', Session::get('id'));
         $Rank_data = $no_data->first();
 
         if($no_data->exists()){
