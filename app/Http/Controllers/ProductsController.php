@@ -82,7 +82,8 @@ class ProductsController extends Controller
     }
 
     public function ProductsInfo($id){
-        $data = Products::find($id);
+
+        $data = Ranking::find($id);
 
         if(is_null($data)){
             Session::flash('err_msg', 'データがありません');

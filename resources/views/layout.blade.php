@@ -59,8 +59,8 @@
 
 
 <div class="comments">
-    <h1 id="4"><br>如果有甚麼建議就寄給我</h1>
     <form method="POST" action="{{ route('comments') }}" onsubmit="return confirm('本当に送信しますか？');">
+        <h1 id="4">如果有甚麼建議就寄給我</h1>
         @csrf
         <h3>件名<input type="text" name="title"></h3>
         <textarea class="inputText" name="Comment" rows="4">{{ old('Comment') }}</textarea>

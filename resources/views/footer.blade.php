@@ -2,7 +2,7 @@
     <div class='title'>日本の禮物
         <img src="{{ asset('/img/japaneseFlag-fixed.png') }}" alt="">
     </div>
-    <div class='comments'>
+    <div class='com'>
         fxhmddyfgd
     </div>
     <div class='groups'>
