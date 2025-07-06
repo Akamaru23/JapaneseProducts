@@ -1,7 +1,7 @@
-## 日本禮物綜合網站
+# 日本禮物綜合網站
 
-<h1>主畫面</h1>
-    <img src=>
+<h3>主畫面</h3>
+    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/main/public/img/japaneseFlag-fixed.png" alt="bug">
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
