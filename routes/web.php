@@ -23,7 +23,8 @@ Route::get('/', [ProductsController::class, 'showWeb'])->name('menu');
 Route::post('/', [ProductsController::class, 'exeComments'])->name('comments');
 Route::post('/SearchPrefecture', [ProductsController::class, 'showPrefecture'])->name('FromPrefecture');
 Route::post('/SearchName', [ProductsController::class, 'showProducts'])->name('FromName');
-Route::get('/Search/{id}', [ProductsController::class, 'ProductsInfo'])->name('info');
+Route::get('/SearchPrefecture/{id}', [ProductsController::class, 'ProductsPreInfo'])->name('pre_info');
+Route::get('/SearchName/{id}', [ProductsController::class, 'ProductsNameInfo'])->name('name_info');
 
 
 

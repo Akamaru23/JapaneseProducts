@@ -46,7 +46,7 @@ class ProductsController extends Controller
         ]);
 
 
-        return redirect(route('menu'));
+        return back();
     }
 
     public function showPrefecture(SearchRequest $request){
@@ -81,9 +81,21 @@ class ProductsController extends Controller
         return view('websites.SearchName', ['data' => $data]);   
     }
 
-    public function ProductsInfo($id){
+    public function ProductsPreInfo($id){
 
         $data = Ranking::find($id);
+
+        if(is_null($data)){
+            Session::flash('err_msg', 'データがありません');
+            return back();
+        }
+
+        return view('websites.ProductsInfo', ['data'=>$data]);
+    }
+
+    public function ProductsNameInfo($id){
+
+        $data = Products::find($id);
 
         if(is_null($data)){
             Session::flash('err_msg', 'データがありません');
