@@ -38,7 +38,7 @@
                 <div class="Souvenir">
                     <div class="SouvenirInfo">
                         <h2>No.@php echo $j @endphp 商品</h2>
-                        <a href="{{ route('info', [ 'id' => $jpProducts[$i]->id]) }}"><h3>{{ $jpProducts[$i]->products_name }}</h3></a>
+                        <a href="{{ route('pre_info', [ 'id' => $jpProducts[$i]->id ]) }}"><h3>{{ htmlspecialchars($jpProducts[$i]->products_name, ENT_QUOTES, 'UTF-8') }}</h3></a>
                         <h2>官方網站</h2>
                         <a href="{{ $jpProducts[$i]->url }}"><h3>{{ $jpProducts[$i]->url }}</h3></a>
                     </div>
