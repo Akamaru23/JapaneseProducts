@@ -1,7 +1,14 @@
 # 日本禮物綜合網站
 
 <h3>主畫面</h3>
-    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214215.png" alt="bug" width=100%>
+    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214325.png" alt="bug" width=30%>
+    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214215.png" alt="bug" width=30%>
+    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214335.png" alt="bug" width=30%>
+
+<h3>介紹區</h3>
+    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214345.png" alt="bug" width=30% left=20%>
+    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214352.png" alt="bug" width=30% left=60%>
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
