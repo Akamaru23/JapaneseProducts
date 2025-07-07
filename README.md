@@ -1,7 +1,13 @@
+<style>
+    .test{
+        wadth:100%;
+    }
+</style>
+
 # 日本禮物綜合網站
 
 <h3>主畫面</h3>
-    <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E7%99%BD%E8%89%B2%E6%88%80%E4%BA%BA.jpg" alt="bug">
+    <img class="test" src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214215.png" alt="bug">
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
