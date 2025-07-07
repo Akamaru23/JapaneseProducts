@@ -25,7 +25,7 @@
   </tr>
 </table>
 
-　　　　　　
+<br><br><br>
 
 ### 查詢資料
 <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E6%9F%A5%E8%A9%A2%E8%B3%87%E6%96%99.png" alt="bug" width=100%>
