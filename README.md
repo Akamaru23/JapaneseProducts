@@ -4,11 +4,11 @@
 
 <table float="left">
   <tr>
-    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214325.png" alt="bug" width=30%></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214325.png" alt="bug" width=100%></td>
     <td style="width:20px;"></td> <!-- 横の空白 -->
-    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214215.png" alt="bug" width=30%></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214215.png" alt="bug" width=100%></td>
     <td style="width:20px;"></td> <!-- 横の空白 -->
-    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214335.png" alt="bug" width=30%></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214335.png" alt="bug" width=100%></td>
   </tr>
 </table>
 <p float="left">
