@@ -27,7 +27,7 @@
 
 <br><br><br>
 
-###查詢資料
+### 查詢資料
 <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E6%9F%A5%E8%A9%A2%E8%B3%87%E6%96%99.png" alt="bug" width=100%>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
