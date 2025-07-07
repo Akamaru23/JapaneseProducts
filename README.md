@@ -40,6 +40,56 @@
 
 ## 後台管理站
 
+<br>
+
+### 輸入密碼頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/adminPass.png" alt="bug" width=100%>
+
+<br>
+
+### 查詢資料頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeDatabese.png" alt="bug" width=100%>
+
+<br>
+
+### 修改資料頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/DetailDatabese.png" alt="bug" width=100%>
+
+<br>
+
+### 新增資料頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/showCreateData.png" alt="bug" width=100%>
+
+<br>
+
+### 確認訊息頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/comments.png" alt="bug" width=100%>
+
+<br>
+
+### 更新全國Top3的頁面
+
+<table float="left">
+  <tr>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/top3rank.png" alt="bug" width=50%></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeTop3.png" alt="bug" width=50%></td>
+  </tr>
+</table>
+  
+<br>
+
+### 查詢各縣Top3的頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/rank.png" alt="bug" width=100%>
+
+<br>
+
+### 更新各縣Top3的頁面
+<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/SearchRank.png" alt="bug" width=100%>
+
+<br><br>
+
+***
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
