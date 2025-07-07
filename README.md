@@ -45,9 +45,9 @@
 ### 輸入密碼頁面
 <table float="left">
   <tr>
-    <td style="width:30%;"></td>
+    <td style="width:400px;"></td>
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/adminPass.png" alt="bug" width=100%></td>
-    <td style="width:30%;"></td>
+    <td style="width:400px;"></td>
   </tr>
 </table>
 
@@ -55,22 +55,41 @@
 <br>
 
 ### 查詢資料頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeDatabese.png" alt="bug" width=100%>
-
-<br>
-
-### 修改資料頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/DetailDatabese.png" alt="bug" width=100%>
+<table float="left">
+  <tr>
+      <td><h5>查詢資料</h5></td>
+      <td></td>
+      <td><h5>修改資料</h5></td>
+  </tr>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeDatabese.png" alt="bug" width=100%></td>
+    <td style="width:400px;"></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/DetailDatabese.png" alt="bug" width=100%></td>
+  </tr>
+</table>
 
 <br>
 
 ### 新增資料頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/showCreateData.png" alt="bug" width=100%>
+<table float="left">
+  <tr>
+    <td style="width:400px;"></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/showCreateData.png" alt="bug" width=100%></td>
+    <td style="width:400px;"></td>
+  </tr>
+</table>
+
 
 <br>
 
 ### 確認訊息頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/comments.png" alt="bug" width=100%>
+<table float="left">
+  <tr>
+    <td style="width:400px;"></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/comments.png" alt="bug" width=100%></td>
+    <td style="width:400px;"></td>
+  </tr>
+</table>
+
 
 <br>
 
@@ -86,12 +105,17 @@
 <br>
 
 ### 查詢各縣Top3的頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/rank.png" alt="bug" width=100%>
-
-<br>
-
-### 更新各縣Top3的頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/SearchRank.png" alt="bug" width=100%>
+<table float="left">
+  <tr>
+      <td><h5>查詢資料</h5></td>
+      <td></td>
+      <td><h5>修改資料</h5></td>
+  </tr>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/rank.png" alt="bug" width=100%></td>
+    <td style="width:400px;"></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/SearchRank.png" alt="bug" width=100%></td>
+  </tr>
+</table>
 
 <br><br>
 
