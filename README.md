@@ -71,8 +71,8 @@
 
 <table float="left">
   <tr>
-    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/top3rank.png" alt="bug" width=50%></td>
-    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeTop3.png" alt="bug" width=50%></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/top3rank.png" alt="bug" width=100%></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeTop3.png" alt="bug" width=100%></td>
   </tr>
 </table>
   
