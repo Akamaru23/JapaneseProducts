@@ -43,7 +43,14 @@
 <br>
 
 ### 輸入密碼頁面
-<img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/adminPass.png" alt="bug" width=100%>
+<table float="left">
+  <tr>
+    <td style="width:30%;"></td>
+    <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/adminPass.png" alt="bug" width=100%></td>
+    <td style="width:30%;"></td>
+  </tr>
+</table>
+
 
 <br>
 
