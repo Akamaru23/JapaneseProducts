@@ -1,8 +1,8 @@
-# 日本禮物綜合網站
+# 日本のお土産紹介サイト
 
 ***
 
-### 主畫面
+### メインサイト
 
 <br>
 
@@ -18,7 +18,7 @@
 
 <br><br><br>
 
-### 介紹區
+### 全国Top3のお土産を表示
 <table float="left">
   <tr>
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-07-06%20214345.png" alt="bug" width=100%></td>
@@ -29,7 +29,7 @@
 
 <br><br><br>
 
-### 查詢資料
+### 検索画面
 <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E6%9F%A5%E8%A9%A2%E8%B3%87%E6%96%99.png" alt="bug" width=100%>
 
 <br>
@@ -38,11 +38,11 @@
 
 <br>
 
-## 後台管理站
+## 管理者画面
 
 <br>
 
-### 輸入密碼頁面
+### パスワード入力
 <table float="left">
   <tr>
     <td style="width:400px;"></td>
@@ -54,7 +54,7 @@
 
 <br>
 
-### 查詢資料頁面
+### データベース検索
 <table float="left">
   <tr>
       <td><h5>查詢資料</h5></td>
@@ -69,7 +69,7 @@
 
 <br>
 
-### 新增資料頁面
+### データ追加
 <table float="left">
   <tr>
     <td style="width:400px;"></td>
@@ -81,7 +81,7 @@
 
 <br>
 
-### 確認訊息頁面
+### メールの確認
 <table float="left">
   <tr>
     <td style="width:400px;"></td>
@@ -93,7 +93,7 @@
 
 <br>
 
-### 更新全國Top3的頁面
+### 全国Top3お土産変更画面
 
 <table float="left">
   <tr>
@@ -104,12 +104,12 @@
   
 <br>
 
-### 查詢各縣Top3的頁面
+### 各都道府県のTop3変更画面
 <table float="left">
   <tr>
-      <td><h5>查詢資料</h5></td>
+      <td><h5>データ検索</h5></td>
       <td></td>
-      <td><h5>修改資料</h5></td>
+      <td><h5>データ修正</h5></td>
   </tr>
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/rank.png" alt="bug" width=100%></td>
     <td style="width:400px;"></td>
