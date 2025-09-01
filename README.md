@@ -16,6 +16,10 @@
   </tr>
 </table>
 
+####これがサイトの一番上の部分で、全国Top3のお土産の画像を出力しています。
+####この画像はswiper.jsというフレームワークを使って、画像が自動で切り替わるようになっています。
+####また、画像をクリックするとこの後に記載してある "全国Top3のお土産を表示" という場所に飛び、簡単にお土産を紹介する文章とそのおみやげの名前が表示されます。
+
 <br><br><br>
 
 ### 全国Top3のお土産を表示
@@ -27,10 +31,14 @@
   </tr>
 </table>
 
+####こちらで簡単にTop3のお土産の名前と紹介文を載せてあります。
+
 <br><br><br>
 
 ### 検索画面
 <img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/%E6%9F%A5%E8%A9%A2%E8%B3%87%E6%96%99.png" alt="bug" width=100%>
+
+####こちらの検索画面からは各都道府県のごとのお土産の紹介と、お土産名を直接検索して表示することも可能です。
 
 <br>
 
@@ -51,21 +59,26 @@
   </tr>
 </table>
 
+####特定のURLを記入するとこちらも画面に飛びます。
+####こちらでパスワードを入力することで管理者サイトに入ることげできます。
+####データベースを編集できる画面のURLを直接入力しても、この画面に戻るように設計しています。
 
 <br>
 
 ### データベース検索
 <table float="left">
   <tr>
-      <td><h5>查詢資料</h5></td>
+      <td><h5>データ検索</h5></td>
       <td></td>
-      <td><h5>修改資料</h5></td>
+      <td><h5>データ修正</h5></td>
   </tr>
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeDatabese.png" alt="bug" width=100%></td>
     <td style="width:400px;"></td>
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/DetailDatabese.png" alt="bug" width=100%></td>
   </tr>
 </table>
+
+####ここで編集したいデータの検索と修正を行えます。
 
 <br>
 
@@ -78,6 +91,7 @@
   </tr>
 </table>
 
+####ここでデータの追加が行えます。
 
 <br>
 
@@ -90,6 +104,7 @@
   </tr>
 </table>
 
+####メインのサイトの下の方にサイト管理者へメッセージを送る場所があるので、そこで送られてきたデータをここで閲覧することができます。
 
 <br>
 
@@ -101,6 +116,9 @@
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/changeTop3.png" alt="bug" width=100%></td>
   </tr>
 </table>
+
+####こちらで全国のおみやげTop3を自由に変更することができます。
+####ここでの変更がメインのサイトに直接変更を加えます。
   
 <br>
 
@@ -116,6 +134,9 @@
     <td><img src="https://github.com/Akamaru23/JapaneseProducts/blob/images/SearchRank.png" alt="bug" width=100%></td>
   </tr>
 </table>
+
+####こちらで各県のおみやげTop3を自由に変更することができます。
+####こちらも変更がメインのサイトに直接変更を加えます。
 
 <br><br>
 
